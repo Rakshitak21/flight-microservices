@@ -1,3 +1,22 @@
+# Use custom user model from bookings app
+AUTH_USER_MODEL = 'bookings.User'
+DEBUG = True
+ALLOWED_HOSTS = ['*']
+# Logging configuration to ensure warnings and above are output to the console
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
+DEBUG = True
 """
 Django settings for booking_project project.
 
@@ -12,6 +31,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +45,7 @@ SECRET_KEY = 'django-insecure-r7*a*3f_mh!76=jicm@$e0!r-a-*g7ff52qpqo@j!fwqe$jdm!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +57,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'bookings',
+    'booking_frontend',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +84,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.static',
             ],
         },
     },
@@ -114,4 +138,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = '/app/staticfiles'
+STATICFILES_DIRS = [
+    str(BASE_DIR / 'booking_frontend' / 'static'),
+]

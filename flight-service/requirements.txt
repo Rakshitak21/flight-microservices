@@ -1,2 +1,7 @@
+beautifulsoup4
+pandas
 django
 djangorestframework
+django-cors-headers
+requests
+beautifulsoup4

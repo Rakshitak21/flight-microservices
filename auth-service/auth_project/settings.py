@@ -31,9 +31,10 @@ INSTALLED_APPS = [
     'accounts',
 
     # Third-party apps
-    'corsheaders',
+    # 'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
+    'auth_frontend',
 ]
 
 
@@ -42,7 +43,7 @@ INSTALLED_APPS = [
 # ---------------------------------------------------------
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',  # must be near top
+    # 'corsheaders.middleware.CorsMiddleware',  # must be near top
 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

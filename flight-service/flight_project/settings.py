@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mq%6j-e2ob80%lz8!^vjjcf))ev^+1yb^+fb(u^^o6y4w25vg#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['flight-service', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'flights',
+    'flight_frontend',
 ]
 
 MIDDLEWARE = [

@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: auth-service
-        image: sushant8ds/auth-service:latest
+        image: auth-service:v2
+        imagePullPolicy: Never
         ports:
         - containerPort: 8001
 ---
