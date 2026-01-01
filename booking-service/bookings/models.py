@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser
 from datetime import datetime
 
 class User(AbstractUser):
+<<<<<<< HEAD
     groups = models.ManyToManyField(
         'auth.Group',
         related_name='booking_users',
@@ -18,6 +19,8 @@ class User(AbstractUser):
         help_text='Specific permissions for this user.',
         verbose_name='user permissions',
     )
+=======
+>>>>>>> 9bebd6bc368c76f87785914b4ec6bf3487a1a978
     def __str__(self):
         return f"{self.id}: {self.first_name} {self.last_name}"
 

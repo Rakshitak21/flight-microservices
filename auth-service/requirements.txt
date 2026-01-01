@@ -1,6 +1,11 @@
 django
 djangorestframework
+<<<<<<< HEAD
 djangorestframework-simplejwt
 django-cors-headers
 django-prometheus
 gunicorn
+=======
+django-cors-headers
+djangorestframework-simplejwt
+>>>>>>> 9bebd6bc368c76f87785914b4ec6bf3487a1a978
